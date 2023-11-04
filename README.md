@@ -12,6 +12,7 @@
 - googletest
 
 - Ubuntu20.04及以上执行：`sudo apt install build-essential cmake libgtest-dev`
+- openEuler执行：`yum install gtest-devel gmock-devel`
 
 ## 创建新git分支
 
@@ -24,13 +25,13 @@
 脚本使用`${ID}.${SOLUTION_NAME}.cc`的方式创建文件
 
 ```shell
-./generate_template ${ID}.${SOLUTION_NAME}
+./generate_template src/${ID}.${SOLUTION_NAME}.cc
 ```
 
 调试运行，执行脚本或者在VSCode中点击CMake扩展的Debug按钮。
 
 ```shell
-./leetcode ${ID}.${PROBLEM_NAME}
+./leetcode src/${ID}.${PROBLEM_NAME}.cc
 ```
 
 ## 持续集成

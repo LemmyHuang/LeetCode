@@ -17,14 +17,17 @@ set -e
 # get scripts directory
 CMAKE_SOURCE_DIR=$(dirname $(readlink -f $0))
 # update cmake source path
-CMAKE_SOURCE_DIR=$(pwd)
+#CMAKE_SOURCE_DIR=$(pwd)
 cd ${CMAKE_SOURCE_DIR}
+
+# src/2.addTwoNumbers.cc -> 2.addTwoNumbers
+NAME=$(echo "$1" | awk -F / '{print $NF}' | awk -F '.cc' '{print $1}')
 
 if [ ! -d ./build ] 
 then
    mkdir build 
 fi
 
-cd build && cmake ..  && make $1 -j8 && cd src 
+cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug && make ${NAME} -j8 && cd src 
 
-./$1
+./${NAME}
