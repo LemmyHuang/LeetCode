@@ -28,6 +28,6 @@ then
    mkdir build 
 fi
 
-cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug && make ${NAME} -j8 && cd src 
+cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug && make ${NAME} -j8 
 
-./${NAME}
+./src/${NAME}
